@@ -5,7 +5,7 @@ import Homepage from "./Homepage.jsx";
 import NewContainerForm from "./NewContainerForm.jsx";
 import NewItemForm from "./NewItemForm.jsx";
 import DeleteContainer from "./DeleteContainer.jsx";
-//import Login from "./Login.jsx";
+import DeleteItem from "./DeleteItem.jsx";
 
 const App = () => {
   return (
@@ -25,12 +25,16 @@ const App = () => {
         />*/}
         {/*<Route path="/:accessToken" element={<Homepage />} />*/}
         <Route path="/" element={<Homepage />}>
+          <Route path="item_form_new" element={<NewItemForm />} />
+          <Route path="item_form_edit/:id" element={<NewItemForm />} />
+          <Route path="items/delete/:id" element={<DeleteItem />} />
+
           <Route path="container_form_new" element={<NewContainerForm />} />
           <Route
             path="container_form_edit/:id"
             element={<NewContainerForm />}
           />
-          <Route path="delete/:id" element={<DeleteContainer />} />
+          <Route path="containers/delete/:id" element={<DeleteContainer />} />
         </Route>
       </Routes>
     </Router>

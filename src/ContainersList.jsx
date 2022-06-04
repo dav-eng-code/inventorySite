@@ -1,8 +1,5 @@
-//import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-//const API_URL = "https://productivity-inventory.herokuapp.com";
 
 const ContainersList = ({ API_URL, API_REQUEST_HEADERS, apiChangedFlag }) => {
   const [containers, setContainers] = useState({});
@@ -10,9 +7,6 @@ const ContainersList = ({ API_URL, API_REQUEST_HEADERS, apiChangedFlag }) => {
   const [expired, setExpired] = useState(false);
   const [empty, setEmpty] = useState(false);
 
-  //API call to get list of containers
-  //console.log list of containers
-  //useEffect(() => requestContainersList());
   console.log("Start functional component (ContainersList) render...");
   console.log("ContainersList - apiChangedFlag", apiChangedFlag);
   console.log(
@@ -78,7 +72,7 @@ const ContainersList = ({ API_URL, API_REQUEST_HEADERS, apiChangedFlag }) => {
     const containersList = containersArray.map((cont) => (
       <li key={cont[0]}>
         {cont[1]} <Link to={`/container_form_edit/${cont[0]}`}>Edit</Link>{" "}
-        <Link to={`/delete/${cont[0]}`}>Delete</Link>
+        <Link to={`containers/delete/${cont[0]}`}>Delete</Link>
       </li>
     ));
     return <ul>{containersList}</ul>;

@@ -83,8 +83,12 @@ const Homepage = () => {
         <div>
           {console.log("loading all elements")}
           <h1 className="items-list">All Items</h1>
-          <Link to={"new_item_form"}>Add Item</Link>
-          <ItemsList />
+          <Link to={"item_form_new"}>Add Item</Link>
+          <ItemsList
+            API_URL={API_URL}
+            API_REQUEST_HEADERS={apiRequestHeaders}
+            apiChangedFlag={apiChanged}
+          />
           <h1 className="containers-list">All Containers</h1>
           <Link to={"container_form_new"}>Add Container</Link>
           <ContainersList

@@ -1,7 +1,7 @@
 import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const DeleteContainer = () => {
+const DeleteItem = () => {
   const [API_URL, apiRequestHeaders, handleChange] = useOutletContext();
   const API_REQUEST_HEADERS = apiRequestHeaders;
   const { id } = useParams();
@@ -9,15 +9,15 @@ const DeleteContainer = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    getContainerDetails();
+    getItemDetails();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  function getContainerDetails() {
+  function getItemDetails() {
     console.log("name set: ", details.name);
     console.log("get details is running........");
-    console.log("fetching container details for id: ", id);
-    fetch(`${API_URL}/containers/${id}`, {
+    console.log("fetching item details for id: ", id);
+    fetch(`${API_URL}/items/${id}`, {
       headers: API_REQUEST_HEADERS,
       method: "GET",
     })
@@ -36,7 +36,7 @@ const DeleteContainer = () => {
 
   function sendDeleteRequest() {
     console.log("sending delete request for id: ", id);
-    fetch(`${API_URL}/containers/${id}`, {
+    fetch(`${API_URL}/items/${id}`, {
       headers: API_REQUEST_HEADERS,
       method: "DELETE",
     })
@@ -55,18 +55,16 @@ const DeleteContainer = () => {
 
   return (
     <div>
-      Are you sure you want to delete the following container? <br />
+      Are you sure you want to delete the following item? <br />
       ID:<span className="details">{details.id}</span>, Name:
       <span className="details">{details.name}</span>, Location:{" "}
       <span className="details">{details.location}</span>,<br />
-      Container Value:<span className="details">{details.container_value}</span>
+      Item Value:<span className="details">{details.value}</span>
       ,<br />
-      Items:<span className="details">{details.items}</span>,<br />
-      Total Value:<span className="details">{details.total_value}</span> <br />
       <button onClick={() => sendDeleteRequest()}>Confirm</button>
       <button onClick={() => navigate("/")}>Cancel</button>
     </div>
   );
 };
 
-export default DeleteContainer;
+export default DeleteItem;
