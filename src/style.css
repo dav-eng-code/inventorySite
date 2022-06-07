@@ -1,0 +1,60 @@
+/*default font settings*/
+body,
+h1,
+h2,
+h3,
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+}
+
+/*explanatory text and warning/error messages*/
+.info_text {
+  font-size: 0.8rem;
+  color: blanchedalmond;
+}
+/*Login/Logout Links*/
+.login {
+  font-size: 0.9rem;
+  color: blue;
+  background-color: aqua;
+}
+/*App Title*/
+.main_title {
+  font-size: 1rem;
+}
+
+/*headings*/
+.heading {
+  font-size: 1rem;
+}
+
+/*lists*/
+.list {
+  list-style: none;
+  font-weight: bold;
+}
+
+/*Item and Container action links*/
+
+/*main list sections*/
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+/*forms*/
+form {
+  display: flex;
+  flex-direction: row;
+  background-color: gray;
+}
+
+/*form labels*/
+form label {
+  width: 100%;
+}
+
+/*form inputs*/
+
+/*form buttons*/
