@@ -10,9 +10,13 @@ import DeleteItem from "./DeleteItem.jsx";
 const App = () => {
   return (
     <Router>
-      <header>Inventory App</header>
+      <header>
+        <h1 className="main_title">Inventory App</h1>
+      </header>
       <Routes>
-        <Route path="/new_item_form" element={<NewItemForm />} />
+        {
+          //<Route path="/new_item_form" element={<NewItemForm />} />
+        }
 
         {/*<Route
           path="/container_form_edit/:id"

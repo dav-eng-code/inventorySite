@@ -103,39 +103,47 @@ const Homepage = () => {
 
   return (
     <div>
-      <a href={LOGIN_URL}>Login</a>
-      {
-        <a href={LOGOUT_URL} onClick={(e) => logoutFunction(e)}>
-          Logout
-        </a>
-      }
+      <div className="login">
+        <a href={LOGIN_URL}>Login</a>
+        {
+          <a href={LOGOUT_URL} onClick={(e) => logoutFunction(e)}>
+            Logout
+          </a>
+        }
+      </div>
       {Object.keys(apiRequestHeaders).length !== 0 &&
       apiRequestHeaders !== null ? (
-        <div>
-          {console.log("loading all elements")}
-          <h1 className="items-list">All Items</h1>
-          <Link to={"item_form_new"}>Add Item</Link>
-          <ItemsList
-            API_URL={API_URL}
-            API_REQUEST_HEADERS={apiRequestHeaders}
-            apiChangedFlag={apiChanged}
-          />
-          <h1 className="containers-list">All Containers</h1>
-          <Link to={"container_form_new"}>Add Container</Link>
-          <ContainersList
-            API_URL={API_URL}
-            API_REQUEST_HEADERS={apiRequestHeaders}
-            apiChangedFlag={apiChanged}
-          />
-          {/*<Pet dogName="a massive great big dog" />
+        <div className="app_area">
+          <div className="list_sections">
+            <div className="section">
+              {console.log("loading all elements")}
+              <h1 className="section_heading">All Items</h1>
+              <Link to={"item_form_new"}>Add Item</Link>
+              <ItemsList
+                API_URL={API_URL}
+                API_REQUEST_HEADERS={apiRequestHeaders}
+                apiChangedFlag={apiChanged}
+              />
+            </div>
+            <div className="section">
+              <h1 className="section_heading">All Containers</h1>
+              <Link to={"container_form_new"}>Add Container</Link>
+              <ContainersList
+                API_URL={API_URL}
+                API_REQUEST_HEADERS={apiRequestHeaders}
+                apiChangedFlag={apiChanged}
+              />
+            </div>
+            {/*<Pet dogName="a massive great big dog" />
       <Pet dogName="a massive great big dog" />
       <SearchParams />*/}
+          </div>
           <Outlet
             context={[API_URL, apiRequestHeaders, apiChanged, handleChange]}
           />
         </div>
       ) : (
-        <h2>Please log in</h2>
+        <h2 className="info_text">Please log in</h2>
       )}
     </div>
   );

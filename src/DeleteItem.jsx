@@ -54,13 +54,15 @@ const DeleteItem = () => {
   }
 
   return (
-    <div>
+    <div className="confirmDeletion">
       Are you sure you want to delete the following item? <br />
-      ID:<span className="details">{details.id}</span>, Name:
-      <span className="details">{details.name}</span>, Location:{" "}
-      <span className="details">{details.location}</span>,<br />
+      ID:<span className="details">{details.id}</span> <br />
+      Name:
+      <span className="details">{details.name}</span> <br />
+      Location: <span className="details">{details.location}</span>
+      <br />
       Item Value:<span className="details">{details.value}</span>
-      ,<br />
+      <br />
       <button onClick={() => sendDeleteRequest()}>Confirm</button>
       <button onClick={() => navigate("/")}>Cancel</button>
     </div>

@@ -103,7 +103,7 @@ const NewItemForm = () => {
   let rows = [];
 
   return (
-    <div>
+    <div className="form_area">
       <form
         action=""
         onSubmit={(e) => {
@@ -165,16 +165,15 @@ const NewItemForm = () => {
         ) : (
           <button type="submit">Create Container!</button>
         )}
+        <Link to="/">Cancel</Link>
       </form>
 
-      <Link to="/">Close</Link>
-
-      <h2>need to create form inlcuding drop down to select container</h2>
+      {/* <h2>need to create form inlcuding drop down to select container</h2>
       <ul>
         <li>provide &quot;name&quot;</li>
         <li>provide &quot;location&quot;</li>
         <li>provide &quot;value&quot;</li>
-      </ul>
+      </ul> */}
     </div>
   );
 };

@@ -109,7 +109,7 @@ const NewContainerForm = () => {
   }
   let rows = [];
   return (
-    <div>
+    <div className="form_area">
       {
         //<h1>{id}</h1>
         //<h2>{JSON.stringify(details)}</h2>
@@ -220,9 +220,8 @@ const NewContainerForm = () => {
         ) : (
           <button type="submit">Create Container!</button>
         )}
+        <Link to="/">Cancel</Link>
       </form>
-
-      <Link to="/">Close</Link>
     </div>
   );
 };

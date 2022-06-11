@@ -75,7 +75,7 @@ const ContainersList = ({ API_URL, API_REQUEST_HEADERS, apiChangedFlag }) => {
         <Link to={`containers/delete/${cont[0]}`}>Delete</Link>
       </li>
     ));
-    return <ul>{containersList}</ul>;
+    return <ul className="list">{containersList}</ul>;
   }
   if (expired) {
     console.log("ContainersList - display token expired message");
