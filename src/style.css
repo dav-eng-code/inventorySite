@@ -8,7 +8,8 @@
 }
 
 body {
-  background-color: white;
+  background-color: #2c2a26;
+  background-color: darkslategray;
   padding: 1rem 20%;
 }
 
@@ -34,18 +35,20 @@ h4 {
 .login a {
   font-size: 1rem;
   font-weight: bold;
-  color: var(--highlight-colour1);
+  color: var(--background-colour-mid);
   padding: 0.5rem;
   margin: 1rem;
 }
 .login a:hover {
-  color: var(--highlight-colour2);
+  color: var(--highlight-colour1);
+  cursor: pointer;
 }
 
 /*App Title*/
 .main_title {
   font-size: 2rem;
   margin: 0.5rem;
+  color: var(--background-colour-mid);
 }
 
 /*headings*/
@@ -94,7 +97,7 @@ h4 {
 .app_area a,
 .app_area button {
   text-decoration: none;
-  border: 1px solid var(--highlight-colour1);
+  border: 1px solid var(--background-colour-mid);
   padding: 0.2rem;
   margin: 0.1rem 1rem;
   max-width: 12rem;
@@ -105,8 +108,9 @@ h4 {
 
 .app_area a:hover,
 .app_area button:hover {
-  color: var(--font-colour2);
-  background-color: var(--background-colour-light);
+  color: var(--highlight-colour1);
+  background-color: var(--highlight-colour2);
+  cursor: pointer;
 }
 
 /*forms*/
