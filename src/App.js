@@ -9,7 +9,7 @@ import DeleteItem from "./DeleteItem.jsx";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/inventorySite">
       <header>
         <h1 className="main_title">Inventory App</h1>
       </header>

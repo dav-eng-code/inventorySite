@@ -2,10 +2,12 @@
   "name": "InventorySite",
   "version": "1.0.0",
   "description": "",
-  
+  "homepage": "https://dav-eng-code.github.io/inventorySite",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "parcel src/index.html",
-    "start": "parcel build src/index.html",
+    "build": "parcel build src/index.html --public-url .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "format:check": "prettier --write \"src/**/*.{js,jsx}\"",
@@ -21,6 +23,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "gh-pages": "^4.0.0",
     "parcel": "^2.5.0",
     "prettier": "^2.6.2"
   },
