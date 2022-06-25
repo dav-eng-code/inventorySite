@@ -1,0 +1,2 @@
+!function(l){if(console.log("gh pages, l: ",l),console.log("gh pages, l.search: ",l.search),console.log("gh pages, l.search[1]: ",l.search[1]),"/"===l.search[1]){var e=l.search.slice(1).split("&").map((function(l){return l.replace(/~and~/g,"&")})).join("?");alert(null,null,l.pathname.slice(0,-1)+e+l.hash),console.log(null,null,l.pathname.slice(0,-1)+e+l.hash),window.history.replaceState(null,null,l.pathname.slice(0,-1)+e+l.hash)}}(window.location);
+//# sourceMappingURL=index.c5e2fe7a.js.map
