@@ -8,8 +8,9 @@
 // When the single page app is loaded further down in this file,
 // the correct url will be waiting in the browser's history for
 // the single page app to route accordingly.
-alert("running gh-pages script")(function(l) {
-    if (l.search[1] === "/") {
+//alert("running gh-pages script")
+(function(l) {
+    if (l.search[2] === "/") {
         var decoded = l.search.slice(1).split("&").map(function(s) {
             return s.replace(/~and~/g, "&");
         }).join("?");

@@ -24843,8 +24843,7 @@ const Homepage = ()=>{
                                         fileName: "src/Homepage.jsx",
                                         lineNumber: 137,
                                         columnNumber: 15
-                                    }, undefined),
-                                    alert("loaded items section")
+                                    }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Homepage.jsx",
@@ -24859,7 +24858,7 @@ const Homepage = ()=>{
                                         children: "All Containers"
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 145,
+                                        lineNumber: 144,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
@@ -24867,7 +24866,7 @@ const Homepage = ()=>{
                                         children: "Add Container"
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 146,
+                                        lineNumber: 145,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containersListJsxDefault.default, {
@@ -24876,17 +24875,15 @@ const Homepage = ()=>{
                                         apiChangedFlag: apiChanged
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 147,
+                                        lineNumber: 146,
                                         columnNumber: 15
-                                    }, undefined),
-                                    alert("loaded containers section")
+                                    }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Homepage.jsx",
-                                lineNumber: 144,
+                                lineNumber: 143,
                                 columnNumber: 13
-                            }, undefined),
-                            alert("loaded list sections")
+                            }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Homepage.jsx",
@@ -24902,10 +24899,9 @@ const Homepage = ()=>{
                         ]
                     }, void 0, false, {
                         fileName: "src/Homepage.jsx",
-                        lineNumber: 160,
+                        lineNumber: 156,
                         columnNumber: 11
-                    }, undefined),
-                    alert("loaded app area")
+                    }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Homepage.jsx",
@@ -24916,7 +24912,7 @@ const Homepage = ()=>{
                 children: "Please log in"
             }, void 0, false, {
                 fileName: "src/Homepage.jsx",
-                lineNumber: 167,
+                lineNumber: 161,
                 columnNumber: 9
             }, undefined)
         ]
