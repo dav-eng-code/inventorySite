@@ -1021,7 +1021,10 @@ var _deleteContainerJsxDefault = parcelHelpers.interopDefault(_deleteContainerJs
 var _deleteItemJsx = require("./DeleteItem.jsx");
 var _deleteItemJsxDefault = parcelHelpers.interopDefault(_deleteItemJsx);
 const App = ()=>{
+    let bn = "";
+    if (!window.location.href.includes("localhost")) bn = "/inventorySite";
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
+        basename: bn,
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("header", {
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
@@ -1029,12 +1032,12 @@ const App = ()=>{
                     children: "Inventory App"
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 14,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 13,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
@@ -1047,7 +1050,7 @@ const App = ()=>{
                             element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newItemFormJsxDefault.default, {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 32,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -1055,7 +1058,7 @@ const App = ()=>{
                             element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newItemFormJsxDefault.default, {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 33,
+                            lineNumber: 37,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -1063,7 +1066,7 @@ const App = ()=>{
                             element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_deleteItemJsxDefault.default, {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 34,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -1071,7 +1074,7 @@ const App = ()=>{
                             element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newContainerFormJsxDefault.default, {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 36,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -1079,7 +1082,7 @@ const App = ()=>{
                             element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newContainerFormJsxDefault.default, {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 37,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -1087,31 +1090,31 @@ const App = ()=>{
                             element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_deleteContainerJsxDefault.default, {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 41,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/App.js",
-                    lineNumber: 31,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 16,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 12,
+        lineNumber: 16,
         columnNumber: 5
     }, undefined);
 };
 _c = App;
 _reactDom.render(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(App, {}, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 48,
+    lineNumber: 52,
     columnNumber: 8
 }, undefined), document.getElementById("root")); //will change in React18
  //render(React.createElement(App), document.getElementById("root")); //will change in React18
@@ -24696,12 +24699,16 @@ const Homepage = ()=>{
     _s();
     const { hash  } = _reactRouterDom.useLocation();
     let accessToken = ""; //hash === "" ? undefined : hash;
-    const LOGIN_URL = "https://dav-eng-code-testing.eu.auth0.com/authorize?audience=https://productivity-inventory.herokuapp.com/&response_type=token&client_id=Q7pQU8jGRAiOCGEqn55STzPPmevq3rsb&redirect_uri=http://localhost:1234/";
-    const LOGOUT_URL = "https://dav-eng-code-testing.eu.auth0.com/v2/logout?client_id=Q7pQU8jGRAiOCGEqn55STzPPmevq3rsb&returnTo=http://localhost:1234/";
+    let REDIRECT_URL = "";
+    if (window.location.href.includes("localhost")) REDIRECT_URL = "http://localhost:1234/";
+    else REDIRECT_URL = "https://dav-eng-code.github.io/inventorySite/";
+    const LOGIN_URL = "https://dav-eng-code-testing.eu.auth0.com/authorize?audience=https://productivity-inventory.herokuapp.com/&response_type=token&client_id=Q7pQU8jGRAiOCGEqn55STzPPmevq3rsb&redirect_uri=" + REDIRECT_URL;
+    const LOGOUT_URL = "https://dav-eng-code-testing.eu.auth0.com/v2/logout?client_id=Q7pQU8jGRAiOCGEqn55STzPPmevq3rsb&returnTo=" + REDIRECT_URL;
     const API_URL = "https://productivity-inventory.herokuapp.com";
     //let API_REQUEST_HEADERS = {};
     const [apiRequestHeaders, setApiRequestHeaders] = _react.useState({});
     const [apiChanged, setApiChanged] = _react.useState(false);
+    console.log("current url: " + window.location.href);
     console.log("Start functional component (Homepage) render...");
     //console.log("check current state of apiRequestHeaders: ", apiRequestHeaders);
     const handleChange = (val)=>{
@@ -24733,6 +24740,7 @@ const Homepage = ()=>{
         console.log("getting request headers from local storage...");
         let fromLocalStorage = window.localStorage.getItem("reqHeaderLocalStorage");
         console.log("got: ", fromLocalStorage);
+        fromLocalStorage = fromLocalStorage === null ? "" : fromLocalStorage;
         if (fromLocalStorage !== "" && Object.keys(JSON.parse(fromLocalStorage)).length !== 0) setApiRequestHeaders(JSON.parse(fromLocalStorage));
     //console.log("this is what we got: ", apiRequestHeaders);
     }, []);
@@ -24761,11 +24769,16 @@ const Homepage = ()=>{
         //   apiRequestHeaders
         // );
         window.localStorage.setItem("reqHeaderLocalStorage", JSON.stringify(apiRequestHeaders));
+        console.log("set request header in local storage and reset url...");
+        console.log("current url: " + window.location.href);
+        console.log("resetting url...");
         location.replace("/");
+        console.log("current url: " + window.location.href);
     }
     //console.log("current access token: ", accessToken);
     //console.log("request header: ", JSON.stringify(apiRequestHeaders));
     //console.log(Object.keys(apiRequestHeaders).length == 0);
+    console.log("current url: " + window.location.href);
     console.log("about to return page content....");
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         children: [
@@ -24777,7 +24790,7 @@ const Homepage = ()=>{
                         children: "Login"
                     }, void 0, false, {
                         fileName: "src/Homepage.jsx",
-                        lineNumber: 107,
+                        lineNumber: 122,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
@@ -24787,13 +24800,13 @@ const Homepage = ()=>{
                         children: "Logout"
                     }, void 0, false, {
                         fileName: "src/Homepage.jsx",
-                        lineNumber: 109,
+                        lineNumber: 124,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Homepage.jsx",
-                lineNumber: 106,
+                lineNumber: 121,
                 columnNumber: 7
             }, undefined),
             Object.keys(apiRequestHeaders).length !== 0 && apiRequestHeaders !== null ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -24811,7 +24824,7 @@ const Homepage = ()=>{
                                         children: "All Items"
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 120,
+                                        lineNumber: 135,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
@@ -24819,7 +24832,7 @@ const Homepage = ()=>{
                                         children: "Add Item"
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 121,
+                                        lineNumber: 136,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_itemsListJsxDefault.default, {
@@ -24828,13 +24841,14 @@ const Homepage = ()=>{
                                         apiChangedFlag: apiChanged
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 122,
+                                        lineNumber: 137,
                                         columnNumber: 15
-                                    }, undefined)
+                                    }, undefined),
+                                    alert("loaded items section")
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Homepage.jsx",
-                                lineNumber: 118,
+                                lineNumber: 133,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -24845,7 +24859,7 @@ const Homepage = ()=>{
                                         children: "All Containers"
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 129,
+                                        lineNumber: 145,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
@@ -24853,7 +24867,7 @@ const Homepage = ()=>{
                                         children: "Add Container"
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 130,
+                                        lineNumber: 146,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containersListJsxDefault.default, {
@@ -24862,19 +24876,21 @@ const Homepage = ()=>{
                                         apiChangedFlag: apiChanged
                                     }, void 0, false, {
                                         fileName: "src/Homepage.jsx",
-                                        lineNumber: 131,
+                                        lineNumber: 147,
                                         columnNumber: 15
-                                    }, undefined)
+                                    }, undefined),
+                                    alert("loaded containers section")
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Homepage.jsx",
-                                lineNumber: 128,
+                                lineNumber: 144,
                                 columnNumber: 13
-                            }, undefined)
+                            }, undefined),
+                            alert("loaded list sections")
                         ]
                     }, void 0, true, {
                         fileName: "src/Homepage.jsx",
-                        lineNumber: 117,
+                        lineNumber: 132,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Outlet, {
@@ -24886,26 +24902,27 @@ const Homepage = ()=>{
                         ]
                     }, void 0, false, {
                         fileName: "src/Homepage.jsx",
-                        lineNumber: 141,
+                        lineNumber: 160,
                         columnNumber: 11
-                    }, undefined)
+                    }, undefined),
+                    alert("loaded app area")
                 ]
             }, void 0, true, {
                 fileName: "src/Homepage.jsx",
-                lineNumber: 116,
+                lineNumber: 131,
                 columnNumber: 9
             }, undefined) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
                 className: "info_text",
                 children: "Please log in"
             }, void 0, false, {
                 fileName: "src/Homepage.jsx",
-                lineNumber: 146,
+                lineNumber: 167,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Homepage.jsx",
-        lineNumber: 105,
+        lineNumber: 120,
         columnNumber: 5
     }, undefined);
 };
@@ -24943,6 +24960,7 @@ const ItemsList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
     const [success, setSuccess] = _react.useState(false);
     const [expired, setExpired] = _react.useState(false);
     const [empty, setEmpty] = _react.useState(false);
+    console.log("current url: " + window.location.href);
     console.log("Start functional component (ItemsList) render...");
     console.log("ItemsList - apiChangedFlag", apiChangedFlag);
     console.log("ItemsList - check state before anytin", Object.keys(items).length, success, expired, empty, API_REQUEST_HEADERS !== "");
@@ -24985,7 +25003,7 @@ const ItemsList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
                         children: "Edit"
                     }, void 0, false, {
                         fileName: "src/ItemsList.jsx",
-                        lineNumber: 70,
+                        lineNumber: 71,
                         columnNumber: 19
                     }, undefined),
                     " ",
@@ -24994,13 +25012,13 @@ const ItemsList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
                         children: "Delete"
                     }, void 0, false, {
                         fileName: "src/ItemsList.jsx",
-                        lineNumber: 71,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, cont[0], true, {
                 fileName: "src/ItemsList.jsx",
-                lineNumber: 69,
+                lineNumber: 70,
                 columnNumber: 7
             }, undefined)
         );
@@ -25009,7 +25027,7 @@ const ItemsList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
             children: itemsList
         }, void 0, false, {
             fileName: "src/ItemsList.jsx",
-            lineNumber: 74,
+            lineNumber: 75,
             columnNumber: 12
         }, undefined);
     }
@@ -25019,7 +25037,7 @@ const ItemsList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
             children: "Session expired - please login again"
         }, void 0, false, {
             fileName: "src/ItemsList.jsx",
-            lineNumber: 78,
+            lineNumber: 79,
             columnNumber: 12
         }, undefined);
     }
@@ -25029,7 +25047,7 @@ const ItemsList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
             children: "The list returned was empty - there are currently no items"
         }, void 0, false, {
             fileName: "src/ItemsList.jsx",
-            lineNumber: 82,
+            lineNumber: 83,
             columnNumber: 12
         }, undefined);
     }
@@ -25040,20 +25058,20 @@ const ItemsList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
                 children: "Waiting for results..."
             }, void 0, false, {
                 fileName: "src/ItemsList.jsx",
-                lineNumber: 94,
+                lineNumber: 95,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h4", {
                 children: "and/or something went wrong - sack the coder!"
             }, void 0, false, {
                 fileName: "src/ItemsList.jsx",
-                lineNumber: 95,
+                lineNumber: 96,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/ItemsList.jsx",
-        lineNumber: 93,
+        lineNumber: 94,
         columnNumber: 5
     }, undefined);
 };
@@ -25087,6 +25105,7 @@ const ContainersList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
     const [success, setSuccess] = _react.useState(false);
     const [expired, setExpired] = _react.useState(false);
     const [empty, setEmpty] = _react.useState(false);
+    console.log("current url: " + window.location.href);
     console.log("Start functional component (ContainersList) render...");
     console.log("ContainersList - apiChangedFlag", apiChangedFlag);
     console.log("ContainersList - check state before anytin", Object.keys(containers).length, success, expired, empty, API_REQUEST_HEADERS !== "");
@@ -25132,7 +25151,7 @@ const ContainersList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
                         children: "Edit"
                     }, void 0, false, {
                         fileName: "src/ContainersList.jsx",
-                        lineNumber: 74,
+                        lineNumber: 75,
                         columnNumber: 19
                     }, undefined),
                     " ",
@@ -25141,13 +25160,13 @@ const ContainersList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
                         children: "Delete"
                     }, void 0, false, {
                         fileName: "src/ContainersList.jsx",
-                        lineNumber: 75,
+                        lineNumber: 76,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, cont[0], true, {
                 fileName: "src/ContainersList.jsx",
-                lineNumber: 73,
+                lineNumber: 74,
                 columnNumber: 7
             }, undefined)
         );
@@ -25156,7 +25175,7 @@ const ContainersList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
             children: containersList
         }, void 0, false, {
             fileName: "src/ContainersList.jsx",
-            lineNumber: 78,
+            lineNumber: 79,
             columnNumber: 12
         }, undefined);
     }
@@ -25166,7 +25185,7 @@ const ContainersList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
             children: "Session expired - please login again"
         }, void 0, false, {
             fileName: "src/ContainersList.jsx",
-            lineNumber: 82,
+            lineNumber: 83,
             columnNumber: 12
         }, undefined);
     }
@@ -25176,7 +25195,7 @@ const ContainersList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
             children: "The list returned was empty - there are currently no containers"
         }, void 0, false, {
             fileName: "src/ContainersList.jsx",
-            lineNumber: 87,
+            lineNumber: 88,
             columnNumber: 7
         }, undefined);
     }
@@ -25187,20 +25206,20 @@ const ContainersList = ({ API_URL , API_REQUEST_HEADERS , apiChangedFlag  })=>{
                 children: "Waiting for results..."
             }, void 0, false, {
                 fileName: "src/ContainersList.jsx",
-                lineNumber: 100,
+                lineNumber: 101,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h4", {
                 children: "and/or something went wrong - sack the coder!"
             }, void 0, false, {
                 fileName: "src/ContainersList.jsx",
-                lineNumber: 101,
+                lineNumber: 102,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/ContainersList.jsx",
-        lineNumber: 99,
+        lineNumber: 100,
         columnNumber: 5
     }, undefined);
 };
